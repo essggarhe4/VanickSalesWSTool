@@ -22,6 +22,8 @@ namespace SalesWSTool.Data
         public string PricingIndexEXCEL { get; set; }
         public string PricingHeader { get; set; }
 
+        public string URLWebService { get; set; }
+
         public bool IsSuccess { get; set;}
         public string Message { get; set; }
 
@@ -79,6 +81,7 @@ namespace SalesWSTool.Data
                                 this.ColumnHeaders = configurationKeys[Constants.Fields.Configurations.ColumnHeaders];
                                 this.PricingIndexEXCEL = configurationKeys[Constants.Fields.Configurations.IndexEXCEL];
                                 this.PricingHeader = configurationKeys[Constants.Fields.Configurations.PricingHeader];
+                                this.URLWebService = configurationKeys[Constants.Fields.Configurations.URLWebService];
 
                                 //this.ColumnBranch = "A";
                                 //this.ColumnBranchName = "B";

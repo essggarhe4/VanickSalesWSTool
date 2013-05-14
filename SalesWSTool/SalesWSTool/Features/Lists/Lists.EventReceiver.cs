@@ -41,63 +41,68 @@ namespace SalesWSTool.Features.Lists
 
             // Add a few sample list items 
             SPListItem thisListItem = thisList.Items.Add();
-            thisListItem[Constants.ConfigurationList.Key] = "Branch";
+            thisListItem[Constants.ConfigurationList.Key] = Constants.Fields.Configurations.Branch;
             thisListItem[Constants.ConfigurationList.Value] = "A";
             thisListItem.Update();
 
             thisListItem = thisList.Items.Add();
-            thisListItem[Constants.ConfigurationList.Key] = "BranchName";
+            thisListItem[Constants.ConfigurationList.Key] = Constants.Fields.Configurations.BranchName;
             thisListItem[Constants.ConfigurationList.Value] = "B";
             thisListItem.Update();
 
             thisListItem = thisList.Items.Add();
-            thisListItem[Constants.ConfigurationList.Key] = "Region";
+            thisListItem[Constants.ConfigurationList.Key] = Constants.Fields.Configurations.Region;
             thisListItem[Constants.ConfigurationList.Value] = "C";
             thisListItem.Update();
 
             thisListItem = thisList.Items.Add();
-            thisListItem[Constants.ConfigurationList.Key] = "Division";
+            thisListItem[Constants.ConfigurationList.Key] = Constants.Fields.Configurations.Division;
             thisListItem[Constants.ConfigurationList.Value] = "D";
             thisListItem.Update();
 
             thisListItem = thisList.Items.Add();
-            thisListItem[Constants.ConfigurationList.Key] = "AddINIFee";
+            thisListItem[Constants.ConfigurationList.Key] = Constants.Fields.Configurations.AddINIFee;
             thisListItem[Constants.ConfigurationList.Value] = "E";
             thisListItem.Update();
 
             thisListItem = thisList.Items.Add();
-            thisListItem[Constants.ConfigurationList.Key] = "RNLMult";
+            thisListItem[Constants.ConfigurationList.Key] = Constants.Fields.Configurations.RNLMult;
             thisListItem[Constants.ConfigurationList.Value] = "F";
             thisListItem.Update();
 
             thisListItem = thisList.Items.Add();
-            thisListItem[Constants.ConfigurationList.Key] = "ExcessIncrement";
+            thisListItem[Constants.ConfigurationList.Key] = Constants.Fields.Configurations.ExcessIncrement;
             thisListItem[Constants.ConfigurationList.Value] = "G";
             thisListItem.Update();
 
             thisListItem = thisList.Items.Add();
-            thisListItem[Constants.ConfigurationList.Key] = "ExcessValuePerIncrement";
+            thisListItem[Constants.ConfigurationList.Key] = Constants.Fields.Configurations.ExcessValuePerIncrement;
             thisListItem[Constants.ConfigurationList.Value] = "H";
             thisListItem.Update();
 
             thisListItem = thisList.Items.Add();
-            thisListItem[Constants.ConfigurationList.Key] = "NofApps";
+            thisListItem[Constants.ConfigurationList.Key] = Constants.Fields.Configurations.NofApps;
             thisListItem[Constants.ConfigurationList.Value] = "I";
             thisListItem.Update();
 
             thisListItem = thisList.Items.Add();
-            thisListItem[Constants.ConfigurationList.Key] = "ColumnHeaders";
+            thisListItem[Constants.ConfigurationList.Key] = Constants.Fields.Configurations.ColumnHeaders;
             thisListItem[Constants.ConfigurationList.Value] = "J";
             thisListItem.Update();
 
             thisListItem = thisList.Items.Add();
-            thisListItem[Constants.ConfigurationList.Key] = "IndexEXCEL";
+            thisListItem[Constants.ConfigurationList.Key] = Constants.Fields.Configurations.IndexEXCEL;
             thisListItem[Constants.ConfigurationList.Value] = "A2";
             thisListItem.Update();
 
             thisListItem = thisList.Items.Add();
-            thisListItem[Constants.ConfigurationList.Key] = "PricingHeader";
+            thisListItem[Constants.ConfigurationList.Key] = Constants.Fields.Configurations.PricingHeader;
             thisListItem[Constants.ConfigurationList.Value] = "2";
+            thisListItem.Update();
+
+            thisListItem = thisList.Items.Add();
+            thisListItem[Constants.ConfigurationList.Key] = Constants.Fields.Configurations.URLWebService;
+            thisListItem[Constants.ConfigurationList.Value] = "http://localhost:51372/Services/SalesWS.svc";
             thisListItem.Update();
         }
 

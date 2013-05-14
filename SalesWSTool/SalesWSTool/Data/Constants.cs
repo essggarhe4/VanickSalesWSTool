@@ -28,6 +28,7 @@ namespace SalesWSTool.Data
                 public const string ColumnHeaders = "ColumnHeaders";
                 public const string IndexEXCEL = "IndexEXCEL";
                 public const string PricingHeader = "PricingHeader";
+                public const string URLWebService = "URLWebService";
             }
         }
 
