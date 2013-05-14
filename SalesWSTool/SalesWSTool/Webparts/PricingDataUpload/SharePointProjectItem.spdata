@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.VisualWebPart" DefaultFile="PricingDataUploadUserControl.ascx" SupportedTrustLevels="FullTrust" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="PricingDataUpload\" Type="ElementManifest" />
+    <ProjectItemFile Source="PricingDataUpload.webpart" Target="PricingDataUpload\" Type="ElementFile" />
+    <ProjectItemFile Source="PricingDataUploadUserControl.ascx" Target="CONTROLTEMPLATES\SalesWSTool.Webparts\PricingDataUpload\" Type="TemplateFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="SalesWSTool.Webparts.PricingDataUpload" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

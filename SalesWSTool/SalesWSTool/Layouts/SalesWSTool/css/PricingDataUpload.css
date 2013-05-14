@@ -1,0 +1,48 @@
+﻿#feedback { font-size: 1.4em; }
+#ProductsSelectable .ui-selecting { background: #99C2FF; }
+#ProductsSelectable .ui-selected { background: #0066FF; color: white; }
+#ProductsSelectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+#ProductsSelectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+
+
+.pricing-upload-main
+{
+    width: 100%;
+    display: block;    
+}
+
+.pricing-upload-main .pricing-upload-main-title
+{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.pricing-upload-main .pricing-upload-main-content
+{
+    display: block;
+    float: left;
+    width: 70%;
+}
+
+.pricing-upload-main .pricing-upload-main-content .pricing-upload-main-content-products,
+.pricing-upload-main .pricing-upload-main-content .pricing-upload-main-content-upload
+{
+    display: block;
+    width: 100%;
+}
+
+.pricing-upload-main .pricing-upload-main-controls
+{
+    display: block;
+    float: right;
+    width: 25%;
+}
+
+.pricing-upload-main .pricing-upload-main-controls .pricing-upload-main-controls-container
+{
+}
+
+.pricing-upload-main .pricing-upload-main-controls .pricing-upload-main-controls-container .pricing-upload-main-controls-container-button
+{
+    position: relative;
+    
+}

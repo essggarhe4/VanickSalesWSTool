@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SalesWSServices.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SalesWSServices.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:51372/Services/SalesWS.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+  <xs:complexType name="ArrayOfPricingRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PricingRecord" nillable="true" type="tns:PricingRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPricingRecord" nillable="true" type="tns:ArrayOfPricingRecord" />
+  <xs:complexType name="PricingRecord">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateLastUpdated" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Division" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FlatCostPerSqFt" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FlatCostPerSqFtPrice" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="INI_Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="IsBaseRecord" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsMultiplier" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastUpdatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OneTime_Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PricingRecordID" type="xs:int" />
+          <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
+          <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductReference" nillable="true" type="q1:EntityReferenceOfProductAgW3MOjq" />
+          <xs:element minOccurs="0" name="Reg_Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Renewal_Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SpcFlatCostPerSqFt" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SpcFlatCostPerSqFtPrice" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SqFtFrom" type="xs:int" />
+          <xs:element minOccurs="0" name="SqFtTo" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PricingRecord" nillable="true" type="tns:PricingRecord" />
+  <xs:complexType name="Product">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q2:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowGeneralDiscount" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AllowPrepayDiscount" type="xs:boolean" />
+          <xs:element minOccurs="0" name="AvailableForCrossSell" type="xs:boolean" />
+          <xs:element minOccurs="0" name="BusUnit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CartState" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CommissionPct" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateLastUpdated" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IncludeOneTimeAmount" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsOneTime" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPlanFlag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ItemTaxOverride" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastUpdatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MissionTemplateCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OutputType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PricingRecords" nillable="true" type="tns:ArrayOfPricingRecord" />
+          <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+          <xs:element minOccurs="0" name="RequiresEasyPay" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Scheduling" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SchedulingType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServiceLine" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SortOrder" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TreeShrubService" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+</xs:schema>

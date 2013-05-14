@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dcf5a1c1-34ad-40be-8785-aed1d572a036" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51372/Services/SalesWS.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SalesWS.xsd" MetadataType="Schema" ID="10d6785b-6d12-4c1d-8876-35c0913e91a3" SourceId="1" SourceUrl="http://localhost:51372/Services/SalesWS.svc?xsd=xsd0" />
+    <MetadataFile FileName="SalesWS.wsdl" MetadataType="Wsdl" ID="8de5a1a1-fbca-49f0-9fa5-1fa3e0d6638e" SourceId="1" SourceUrl="http://localhost:51372/Services/SalesWS.svc?wsdl" />
+    <MetadataFile FileName="SalesWS.disco" MetadataType="Disco" ID="ec68c417-a06c-45a2-b26e-71bebcb843a7" SourceId="1" SourceUrl="http://localhost:51372/Services/SalesWS.svc?disco" />
+    <MetadataFile FileName="SalesWS1.xsd" MetadataType="Schema" ID="2acdedbf-90c5-49c7-9804-a618d465f799" SourceId="1" SourceUrl="http://localhost:51372/Services/SalesWS.svc?xsd=xsd1" />
+    <MetadataFile FileName="SalesWS2.xsd" MetadataType="Schema" ID="9ccdf04b-eeba-4689-91d5-18dad413724c" SourceId="1" SourceUrl="http://localhost:51372/Services/SalesWS.svc?xsd=xsd2" />
+    <MetadataFile FileName="SalesWS31.xsd" MetadataType="Schema" ID="90929902-455f-440f-be11-af8e9f5b44ac" SourceId="1" SourceUrl="http://localhost:51372/Services/SalesWS.svc?xsd=xsd3" />
+    <MetadataFile FileName="SalesWS32.xsd" MetadataType="Schema" ID="339c5cd7-1014-4992-b34e-db405881b060" SourceId="1" SourceUrl="http://localhost:51372/Services/SalesWS.svc?xsd=xsd4" />
+    <MetadataFile FileName="SalesWS33.xsd" MetadataType="Schema" ID="3075c21a-aa71-4b1b-b80f-75b93274898b" SourceId="1" SourceUrl="http://localhost:51372/Services/SalesWS.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

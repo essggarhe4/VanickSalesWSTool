@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SVMSalesModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SVMSalesModelStoreContainer">
+          <EntitySet Name="Branch_Product" EntityType="SVMSalesModel.Store.Branch_Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PricingRecords" EntityType="SVMSalesModel.Store.PricingRecords" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Products" EntityType="SVMSalesModel.Store.Products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Region_Product" EntityType="SVMSalesModel.Store.Region_Product" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_PricingOverrides_Products" Association="SVMSalesModel.Store.FK_PricingOverrides_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="PricingRecords" EntitySet="PricingRecords" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Branch_Product">
+          <Key>
+            <PropertyRef Name="BranchID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="BranchID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="CartState" Type="varchar" MaxLength="50" />
+          <Property Name="DateActiveFrom" Type="datetime" />
+          <Property Name="DateActiveTo" Type="datetime" />
+          <Property Name="NumVisits" Type="int" />
+          <Property Name="BranchBrand" Type="varchar" MaxLength="50" />
+          <Property Name="MissionTemplateCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ServiceStart" Type="nvarchar" MaxLength="4" />
+          <Property Name="ServiceEnd" Type="nvarchar" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="PricingRecords">
+          <Key>
+            <PropertyRef Name="PricingRecordID" />
+          </Key>
+          <Property Name="PricingRecordID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="Division" Type="varchar" MaxLength="50" />
+          <Property Name="Region" Type="varchar" MaxLength="50" />
+          <Property Name="Branch" Type="varchar" MaxLength="50" />
+          <Property Name="INI_Amount" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="Reg_Amount" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="Renewal_Amount" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="OneTime_Amount" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="SqFtFrom" Type="int" Nullable="false" />
+          <Property Name="SqFtTo" Type="int" Nullable="false" />
+          <Property Name="IsMultiplier" Type="bit" Nullable="false" />
+          <Property Name="IsBaseRecord" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdatedBy" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DateLastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="Brand" Type="varchar" MaxLength="50" />
+          <Property Name="FlatCostPerSqFt" Type="int" />
+          <Property Name="FlatCostPerSqFtPrice" Type="decimal" Scale="2" />
+          <Property Name="SpcFlatCostPerSqFt" Type="int" />
+          <Property Name="SpcFlatCostPerSqFtPrice" Type="decimal" Scale="2" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MissionTemplateCode" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Description" Type="text" />
+          <Property Name="BusUnit" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="CartState" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="AllowGeneralDiscount" Type="bit" Nullable="false" />
+          <Property Name="OutputType" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Scheduling" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="SchedulingType" Type="varchar" MaxLength="50" />
+          <Property Name="CommissionPct" Type="decimal" Nullable="false" Precision="5" Scale="2" />
+          <Property Name="AllowPrepayDiscount" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdatedBy" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DateLastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="ServiceLine" Type="varchar" MaxLength="100" />
+          <Property Name="SortOrder" Type="int" />
+          <Property Name="AvailableForCrossSell" Type="bit" Nullable="false" />
+          <Property Name="TreeShrubService" Type="bit" Nullable="false" />
+          <Property Name="RequiresEasyPay" Type="bit" Nullable="false" />
+          <Property Name="ItemTaxOverride" Type="bit" Nullable="false" />
+          <Property Name="IsPlanFlag" Type="bit" Nullable="false" />
+          <Property Name="IsOneTime" Type="bit" Nullable="false" />
+          <Property Name="IncludeOneTimeAmount" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Region_Product">
+          <Key>
+            <PropertyRef Name="RegionID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="RegionID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="CartState" Type="varchar" MaxLength="50" />
+          <Property Name="DateActiveFrom" Type="datetime" />
+          <Property Name="DateActiveTo" Type="datetime" />
+          <Property Name="NumVisits" Type="int" Nullable="false" />
+          <Property Name="RegionBrand" Type="varchar" MaxLength="50" />
+          <Property Name="ServiceStart" Type="nvarchar" MaxLength="4" />
+          <Property Name="ServiceEnd" Type="nvarchar" MaxLength="4" />
+        </EntityType>
+        <Association Name="FK_PricingOverrides_Products">
+          <End Role="Products" Type="SVMSalesModel.Store.Products" Multiplicity="1" />
+          <End Role="PricingRecords" Type="SVMSalesModel.Store.PricingRecords" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="PricingRecords">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SVMSalesModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SVMSalesWSDB" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Branch_Product" EntityType="SVMSalesModel.Branch_Product" />
+          <EntitySet Name="PricingRecords" EntityType="SVMSalesModel.PricingRecord" />
+          <EntitySet Name="Products" EntityType="SVMSalesModel.Product" />
+          <EntitySet Name="Region_Product" EntityType="SVMSalesModel.Region_Product" />
+          <AssociationSet Name="FK_PricingOverrides_Products" Association="SVMSalesModel.FK_PricingOverrides_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="PricingRecords" EntitySet="PricingRecords" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Branch_Product">
+          <Key>
+            <PropertyRef Name="BranchID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="BranchID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="CartState" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DateActiveFrom" Type="DateTime" />
+          <Property Name="DateActiveTo" Type="DateTime" />
+          <Property Name="NumVisits" Type="Int32" />
+          <Property Name="BranchBrand" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MissionTemplateCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ServiceStart" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="ServiceEnd" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PricingRecord">
+          <Key>
+            <PropertyRef Name="PricingRecordID" />
+          </Key>
+          <Property Name="PricingRecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Division" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Region" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Branch" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="INI_Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Reg_Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Renewal_Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="OneTime_Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SqFtFrom" Type="Int32" Nullable="false" />
+          <Property Name="SqFtTo" Type="Int32" Nullable="false" />
+          <Property Name="IsMultiplier" Type="Boolean" Nullable="false" />
+          <Property Name="IsBaseRecord" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="LastUpdatedBy" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DateLastUpdated" Type="DateTime" Nullable="false" />
+          <Property Name="Brand" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FlatCostPerSqFt" Type="Int32" />
+          <Property Name="FlatCostPerSqFtPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SpcFlatCostPerSqFt" Type="Int32" />
+          <Property Name="SpcFlatCostPerSqFtPrice" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Product" Relationship="SVMSalesModel.FK_PricingOverrides_Products" FromRole="PricingRecords" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MissionTemplateCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="BusUnit" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="CartState" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="AllowGeneralDiscount" Type="Boolean" Nullable="false" />
+          <Property Name="OutputType" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Scheduling" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SchedulingType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CommissionPct" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+          <Property Name="AllowPrepayDiscount" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="LastUpdatedBy" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="DateLastUpdated" Type="DateTime" Nullable="false" />
+          <Property Name="ServiceLine" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SortOrder" Type="Int32" />
+          <Property Name="AvailableForCrossSell" Type="Boolean" Nullable="false" />
+          <Property Name="TreeShrubService" Type="Boolean" Nullable="false" />
+          <Property Name="RequiresEasyPay" Type="Boolean" Nullable="false" />
+          <Property Name="ItemTaxOverride" Type="Boolean" Nullable="false" />
+          <Property Name="IsPlanFlag" Type="Boolean" Nullable="false" />
+          <Property Name="IsOneTime" Type="Boolean" Nullable="false" />
+          <Property Name="IncludeOneTimeAmount" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PricingRecords" Relationship="SVMSalesModel.FK_PricingOverrides_Products" FromRole="Products" ToRole="PricingRecords" />
+        </EntityType>
+        <EntityType Name="Region_Product">
+          <Key>
+            <PropertyRef Name="RegionID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="RegionID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="CartState" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DateActiveFrom" Type="DateTime" />
+          <Property Name="DateActiveTo" Type="DateTime" />
+          <Property Name="NumVisits" Type="Int32" Nullable="false" />
+          <Property Name="RegionBrand" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ServiceStart" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+          <Property Name="ServiceEnd" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_PricingOverrides_Products">
+          <End Role="Products" Type="SVMSalesModel.Product" Multiplicity="1" />
+          <End Role="PricingRecords" Type="SVMSalesModel.PricingRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="PricingRecords">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SVMSalesModelStoreContainer" CdmEntityContainer="SVMSalesWSDB">
+          <EntitySetMapping Name="Branch_Product"><EntityTypeMapping TypeName="SVMSalesModel.Branch_Product"><MappingFragment StoreEntitySet="Branch_Product">
+            <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="CartState" ColumnName="CartState" />
+            <ScalarProperty Name="DateActiveFrom" ColumnName="DateActiveFrom" />
+            <ScalarProperty Name="DateActiveTo" ColumnName="DateActiveTo" />
+            <ScalarProperty Name="NumVisits" ColumnName="NumVisits" />
+            <ScalarProperty Name="BranchBrand" ColumnName="BranchBrand" />
+            <ScalarProperty Name="MissionTemplateCode" ColumnName="MissionTemplateCode" />
+            <ScalarProperty Name="ServiceStart" ColumnName="ServiceStart" />
+            <ScalarProperty Name="ServiceEnd" ColumnName="ServiceEnd" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="PricingRecords"><EntityTypeMapping TypeName="SVMSalesModel.PricingRecord"><MappingFragment StoreEntitySet="PricingRecords">
+            <ScalarProperty Name="PricingRecordID" ColumnName="PricingRecordID" />
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="Division" ColumnName="Division" />
+            <ScalarProperty Name="Region" ColumnName="Region" />
+            <ScalarProperty Name="Branch" ColumnName="Branch" />
+            <ScalarProperty Name="INI_Amount" ColumnName="INI_Amount" />
+            <ScalarProperty Name="Reg_Amount" ColumnName="Reg_Amount" />
+            <ScalarProperty Name="Renewal_Amount" ColumnName="Renewal_Amount" />
+            <ScalarProperty Name="OneTime_Amount" ColumnName="OneTime_Amount" />
+            <ScalarProperty Name="SqFtFrom" ColumnName="SqFtFrom" />
+            <ScalarProperty Name="SqFtTo" ColumnName="SqFtTo" />
+            <ScalarProperty Name="IsMultiplier" ColumnName="IsMultiplier" />
+            <ScalarProperty Name="IsBaseRecord" ColumnName="IsBaseRecord" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+            <ScalarProperty Name="DateLastUpdated" ColumnName="DateLastUpdated" />
+            <ScalarProperty Name="Brand" ColumnName="Brand" />
+            <ScalarProperty Name="FlatCostPerSqFt" ColumnName="FlatCostPerSqFt" />
+            <ScalarProperty Name="FlatCostPerSqFtPrice" ColumnName="FlatCostPerSqFtPrice" />
+            <ScalarProperty Name="SpcFlatCostPerSqFt" ColumnName="SpcFlatCostPerSqFt" />
+            <ScalarProperty Name="SpcFlatCostPerSqFtPrice" ColumnName="SpcFlatCostPerSqFtPrice" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Products"><EntityTypeMapping TypeName="SVMSalesModel.Product"><MappingFragment StoreEntitySet="Products">
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="MissionTemplateCode" ColumnName="MissionTemplateCode" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="BusUnit" ColumnName="BusUnit" />
+            <ScalarProperty Name="CartState" ColumnName="CartState" />
+            <ScalarProperty Name="AllowGeneralDiscount" ColumnName="AllowGeneralDiscount" />
+            <ScalarProperty Name="OutputType" ColumnName="OutputType" />
+            <ScalarProperty Name="Scheduling" ColumnName="Scheduling" />
+            <ScalarProperty Name="SchedulingType" ColumnName="SchedulingType" />
+            <ScalarProperty Name="CommissionPct" ColumnName="CommissionPct" />
+            <ScalarProperty Name="AllowPrepayDiscount" ColumnName="AllowPrepayDiscount" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+            <ScalarProperty Name="DateLastUpdated" ColumnName="DateLastUpdated" />
+            <ScalarProperty Name="ServiceLine" ColumnName="ServiceLine" />
+            <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+            <ScalarProperty Name="AvailableForCrossSell" ColumnName="AvailableForCrossSell" />
+            <ScalarProperty Name="TreeShrubService" ColumnName="TreeShrubService" />
+            <ScalarProperty Name="RequiresEasyPay" ColumnName="RequiresEasyPay" />
+            <ScalarProperty Name="ItemTaxOverride" ColumnName="ItemTaxOverride" />
+            <ScalarProperty Name="IsPlanFlag" ColumnName="IsPlanFlag" />
+            <ScalarProperty Name="IsOneTime" ColumnName="IsOneTime" />
+            <ScalarProperty Name="IncludeOneTimeAmount" ColumnName="IncludeOneTimeAmount" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Region_Product"><EntityTypeMapping TypeName="SVMSalesModel.Region_Product"><MappingFragment StoreEntitySet="Region_Product">
+            <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+            <ScalarProperty Name="CartState" ColumnName="CartState" />
+            <ScalarProperty Name="DateActiveFrom" ColumnName="DateActiveFrom" />
+            <ScalarProperty Name="DateActiveTo" ColumnName="DateActiveTo" />
+            <ScalarProperty Name="NumVisits" ColumnName="NumVisits" />
+            <ScalarProperty Name="RegionBrand" ColumnName="RegionBrand" />
+            <ScalarProperty Name="ServiceStart" ColumnName="ServiceStart" />
+            <ScalarProperty Name="ServiceEnd" ColumnName="ServiceEnd" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SVMSalesWSModel">
+        <EntityTypeShape EntityType="SVMSalesModel.Branch_Product" Width="1.5" PointX="5.75" PointY="0.75" Height="2.5783902994791665" IsExpanded="true" />
+        <EntityTypeShape EntityType="SVMSalesModel.PricingRecord" Width="1.5" PointX="3" PointY="1.375" Height="4.7149055989583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="SVMSalesModel.Product" Width="1.5" PointX="0.75" PointY="1.125" Height="5.2079475911458335" IsExpanded="true" />
+        <EntityTypeShape EntityType="SVMSalesModel.Region_Product" Width="1.5" PointX="5.75" PointY="4.75" Height="2.4140429687499996" IsExpanded="true" />
+        <AssociationConnector Association="SVMSalesModel.FK_PricingOverrides_Products" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="3.7324527994791659" />
+          <ConnectorPoint PointX="3" PointY="3.7324527994791659" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
